@@ -13,6 +13,10 @@ class Backlog {
     return this.client("/space").then(res => res.data);
   }
 
+  users() {
+    return this.client("/users").then(res => res.data);
+  }
+
   projects(all = false, archived = false) {
     return this.client
       .get("/projects", { params: { all, archived } })
