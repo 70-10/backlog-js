@@ -1,11 +1,10 @@
 const axios = require("axios");
-const qs = require("querystring");
 
 class Backlog {
   constructor(options = {}) {
     this.client = axios.create({
       baseURL: `https://${options.spaceKey || ""}.backlog.jp/api/v2`,
-      params: { apiKey: options.apiKey }
+      params: { apiKey: options.apiKey },
     });
   }
 
