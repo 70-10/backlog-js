@@ -21,8 +21,17 @@ class Backlog {
       .get("/projects", { params: { all, archived } })
       .then(res => res.data);
   }
+
   projectUsers(id) {
     return this.client.get(`/projects/${id}/users`).then(res => res.data);
+  }
+
+  deleteUserFromProject(userId, projectId) {
+    return this.client({
+      method: "delete",
+      url: `/projects/${projectId}/users`,
+      data: { userId },
+    }).then(res => res.data);
   }
 }
 
