@@ -17,9 +17,7 @@ class Backlog {
   }
 
   projects(all = false, archived = false) {
-    return this.client
-      .get("/projects", { params: { all, archived } })
-      .then(res => res.data);
+    return this.client.get("/projects", { params: { all, archived } }).then(res => res.data);
   }
 
   projectUsers(id) {

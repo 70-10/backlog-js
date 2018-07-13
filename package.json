@@ -7,20 +7,20 @@
     "node": ">=8"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "prettier-eslint --write ./index.js"
   },
   "repository": "70-10/backlog-js",
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.17.1"
+    "axios": "^0.18.0"
   },
   "devDependencies": {
-    "eslint": "^4.12.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-prettier": "^2.3.1",
-    "prettier": "^1.8.2"
+    "eslint": "^5.1.0",
+    "eslint-plugin-node": "^6.0.1",
+    "prettier": "^1.13.7",
+    "prettier-eslint": "^8.8.2",
+    "prettier-eslint-cli": "^4.7.1"
   }
 }
