@@ -8,6 +8,10 @@ class Backlog {
     });
   }
 
+  groups() {
+    return this.client("/groups").then(res => res.data);
+  }
+
   space() {
     return this.client("/space").then(res => res.data);
   }
