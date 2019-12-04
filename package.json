@@ -2,25 +2,24 @@
   "name": "backlog",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
-  "engines": {
-    "node": ">=8"
-  },
-  "scripts": {
-    "lint": "prettier-eslint --write ./index.js"
-  },
-  "repository": "70-10/backlog-js",
   "keywords": [],
-  "author": "",
+  "repository": "70-10/backlog-js",
   "license": "MIT",
+  "author": "",
+  "main": "dist",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "prepare": "npm run build"
+  },
   "dependencies": {
     "axios": "^0.19.0"
   },
   "devDependencies": {
-    "eslint": "^6.5.1",
-    "eslint-plugin-node": "^10.0.0",
-    "prettier": "^1.18.2",
-    "prettier-eslint": "^9.0.0",
-    "prettier-eslint-cli": "^5.0.0"
+    "@types/node": "^12.12.14",
+    "rimraf": "^3.0.0",
+    "typescript": "^3.7.2"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }
