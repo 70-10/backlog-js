@@ -8,27 +8,27 @@ export function createClient(spaceKey: string, apiKey: string) {
   const client = axios.create({ baseURL: `https://${spaceKey}.backlog.jp/api/v2` });
 
   return {
-    async space() {
+    async getSpace() {
       const res = await client.get<Space>("/space", { params: { apiKey } });
       return res.data;
     },
 
-    async users() {
+    async getUsers() {
       const res = await client.get<User[]>("/users", { params: { apiKey } });
       return res.data;
     },
 
-    async teams() {
+    async getTeams() {
       const res = await client.get<Team[]>("/teams", { params: { apiKey } });
       return res.data;
     },
 
-    async projects(all: boolean = false, archived: boolean = false) {
+    async getProjects(all: boolean = false, archived: boolean = false) {
       const res = await client.get<Project[]>("/projects", { params: { all, archived, apiKey } });
       return res.data;
     },
 
-    async projectUsers(projectIdOrKey: number | string) {
+    async getProjectUsers(projectIdOrKey: number | string) {
       const res = await client.get<Project>(`/projects/${projectIdOrKey}/users`, { params: { apiKey } });
       return res.data;
     },
