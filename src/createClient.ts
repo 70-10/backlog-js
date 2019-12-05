@@ -29,7 +29,7 @@ export function createClient(spaceKey: string, apiKey: string) {
     },
 
     async getProjectUsers(projectIdOrKey: number | string) {
-      const res = await client.get<Project>(`/projects/${projectIdOrKey}/users`, { params: { apiKey } });
+      const res = await client.get<User[]>(`/projects/${projectIdOrKey}/users`, { params: { apiKey } });
       return res.data;
     },
 
